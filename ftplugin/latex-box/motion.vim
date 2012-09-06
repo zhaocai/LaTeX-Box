@@ -430,6 +430,9 @@ function! s:FindClosestSection(toc, fileindices)
 	endif
 
 	let imax = len(a:fileindices[file])
+	if imax == 0
+		return 0
+	endif
 	let imin = 0
 	while imin < imax - 1
 		let i = (imax + imin) / 2
